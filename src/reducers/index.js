@@ -1,8 +1,12 @@
-import { combineReducers } from 'redux';
-import hello from './hello';
+import * as types from '../constants/ActionTypes';
 
-const rootReducer = combineReducers({
-    hello
-});
+let initialState = {};
 
-export default rootReducer;
+const Index = (state = initialState, action) => {
+    switch (action.type) {
+        default:
+            return state;
+    };
+};
+
+export default Index;
