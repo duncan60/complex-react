@@ -1,4 +1,6 @@
 import 'babel-polyfill';
+import 'antd/lib/index.css';
+
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
@@ -8,7 +10,7 @@ import { Provider } from 'react-redux';
 import rootReducer from 'reducers';
 import appMiddleware from 'appMiddleware';
 
-import { Root, Home } from 'components/page';
+import { Root, Home, JsBin, Markdown, Firebase } from 'components/page';
 
 const finalCreateStore = compose(
     applyMiddleware(appMiddleware),
@@ -20,6 +22,9 @@ const store = finalCreateStore(rootReducer);
 const routes = (
     <Route component={Root}>
         <Route path="/" component={Home} />
+        <Route path="/jsbin" component={JsBin} />
+        <Route path="/markdown" component={Markdown} />
+        <Route path="/firebase" component={Firebase} />
     </Route>
 );
 
