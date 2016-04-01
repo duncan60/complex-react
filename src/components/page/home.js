@@ -1,15 +1,15 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import { Row, Col } from 'antd';
-class Home extends Component {
+class HomePage extends Component {
     render() {
         return (
             <section className="main-container">
                 <Row type="flex" justify="center" align="middle">
-                    <Col span="20">Home</Col>
+                    <Col span="20">HomePage</Col>
                 </Row>
             </section>
         );
     };
 };
 
-export default Home;
+export default HomePage;

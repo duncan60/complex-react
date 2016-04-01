@@ -1,13 +1,13 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 
-class Firebase extends Component {
+class FirebasePage extends Component {
     render() {
         return (
            	<section className="main-container">
-                Firebase
+                FirebasePage
             </section>
         );
     };
 };
 
-export default Firebase;
+export default FirebasePage;

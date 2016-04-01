@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import rootReducer from 'reducers';
 import appMiddleware from 'appMiddleware';
 
-import { Root, Home, JsBin, Markdown, Firebase } from 'components/page';
+import { Root, HomePage, JsBinPage, MarkdownPage, FirebasePage } from 'components/page';
 
 const finalCreateStore = compose(
     applyMiddleware(appMiddleware),
@@ -21,10 +21,10 @@ const store = finalCreateStore(rootReducer);
 
 const routes = (
     <Route component={Root}>
-        <Route path="/" component={Home} />
-        <Route path="/jsbin" component={JsBin} />
-        <Route path="/markdown" component={Markdown} />
-        <Route path="/firebase" component={Firebase} />
+        <Route path="/" component={HomePage} />
+        <Route path="/jsbin" component={JsBinPage} />
+        <Route path="/markdown" component={MarkdownPage} />
+        <Route path="/firebase" component={FirebasePage} />
     </Route>
 );
 

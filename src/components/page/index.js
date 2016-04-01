@@ -1,13 +1,13 @@
 import Root from './root';
-import Home from './home';
-import JsBin from './js-bin';
-import Markdown from './markdown';
-import Firebase from './firebase';
+import HomePage from './home';
+import JsBinPage from './js-bin';
+import MarkdownPage from './markdown';
+import FirebasePage from './firebase';
 
 export {
     Root,
-    Home,
-    JsBin,
-    Markdown,
-    Firebase
+    HomePage,
+    JsBinPage,
+    MarkdownPage,
+    FirebasePage
 };
