@@ -3,9 +3,9 @@ import React, { PropTypes, Component } from 'react';
 class Firebase extends Component {
     render() {
         return (
-            <div>
+           	<section className="main-container">
                 Firebase
-            </div>
+            </section>
         );
     };
 };

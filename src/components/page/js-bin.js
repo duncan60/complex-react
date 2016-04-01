@@ -8,9 +8,9 @@ class JsBin extends Component {
     }
     render() {
         return (
-            <div>
+            <section className="main-container">
                 <div dangerouslySetInnerHTML={ this.iframe() } />
-            </div>
+            </section>
         );
     };
 };
