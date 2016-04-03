@@ -18,6 +18,7 @@ module.exports = {
         new webpack.NoErrorsPlugin()
     ],
     module: {
+        noParse: [/autoit.js/],
         loaders: [
             {
                 test: /\.js(x)?$/,
