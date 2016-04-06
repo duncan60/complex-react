@@ -5,7 +5,9 @@ class HomePage extends Component {
         return (
             <section className="main-container">
                 <Row type="flex" justify="center" align="middle">
-                    <Col span="20">HomePage</Col>
+                    <Col span="20">
+                    	<h2>Home page</h2>
+                    </Col>
                 </Row>
             </section>
         );

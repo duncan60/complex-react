@@ -23,6 +23,7 @@ class MarkdownPage extends Component {
             <section className="main-container">
                 <Row type="flex" justify="center" align="middle">
                     <Col span="20">
+                        <h2>Markdown page</h2>
                         <Markdown>
                             # Markdown
                         </Markdown>

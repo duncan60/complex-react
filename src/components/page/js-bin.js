@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Row, Col } from 'antd';
 
 class JsBinPage extends Component {
     iframe() {
@@ -9,7 +10,12 @@ class JsBinPage extends Component {
     render() {
         return (
             <section className="main-container">
-                <div dangerouslySetInnerHTML={ this.iframe() } />
+                <Row type="flex" justify="center" align="middle">
+                    <Col span="20">
+                        <h2>Jsbin page</h2>
+                        <div dangerouslySetInnerHTML={ this.iframe() } />
+                    </Col>
+                </Row>
             </section>
         );
     };
