@@ -1,32 +1,23 @@
 import * as types from 'constants/ActionTypes';
 
-
-let fetchSuccessed = (json) => {
+let getFirebaseList = (list) => {
     return {
-        type: types.FETCH_SUCCESSED,
-        data: json
+        type: types.FIREBASE_GET_LIST,
+        list
     };
 };
-
-let fetchFailed = () => {
+let friebaseError = (error) => {
     return {
-        type: types.FETCH_FAILED
+        type: types.FIREBASE_ERROR,
+        error
     };
 };
-
-export const setSay = (say) => {
+export function firebeaseInitConnect() {
     return {
-        type: types.SET_SAY,
-        say
-    };
-};
-
-export function fetchAPI() {
-    return {
-        types   : [fetchSuccessed, fetchFailed],
+        types   : [getFirebaseList, friebaseError],
         fetchAPI: {
-            path  : 'https://api.github.com',
-            method: 'GET'
+            method: 'init',
+            child : '/'
         }
     };
-}
+};

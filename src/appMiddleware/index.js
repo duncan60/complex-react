@@ -1,5 +1,8 @@
 import 'es6-promise';
 import 'isomorphic-fetch';
+import Firebase from 'firebase';
+
+const firebaseRef = new Firebase('https://complex-react.firebaseio.com');
 
 export default function appMiddleware () {
     return next => action => {
@@ -8,24 +11,15 @@ export default function appMiddleware () {
             return next(action);
         }
         const [ success, failure ] = types;
-        const fetchSetting = {
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            method : fetchAPI.method,
-            body   : JSON.stringify(fetchAPI.body)
-        };
-        return fetch(fetchAPI.path, fetchSetting)
-            .then(response => response.json())
-            .then((json) => {
-                if (json.message === 'Not Found') {
-                    next(failure(json));
-                } else {
-                    next(success(json));
-                }
-            })
-            .catch((err) => {
-                next(failure(err));
-            });
+        const childRef = firebaseRef.child(fetchAPI.child);
+        switch (fetchAPI.method) {
+            case'init':
+                childRef.on('value', (snapshot) => {
+                    next(success(snapshot.val()));
+                }, (error) => {
+                    next(failure(error.code));
+                });
+                break;
+        }
     };
 }
