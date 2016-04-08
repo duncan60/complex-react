@@ -13,9 +13,17 @@ export default function appMiddleware () {
         const [ success, failure ] = types;
         const childRef = firebaseRef.child(fetchAPI.child);
         switch (fetchAPI.method) {
-            case'init':
+            case 'init':
                 childRef.on('value', (snapshot) => {
                     next(success(snapshot.val()));
+                }, (error) => {
+                    next(failure(error.code));
+                });
+                break;
+            case 'off':
+                console.log('off');
+                firebaseRef.off('value', () => {
+                    next(success());
                 }, (error) => {
                     next(failure(error.code));
                 });

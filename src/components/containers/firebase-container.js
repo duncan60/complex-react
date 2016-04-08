@@ -2,11 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { firebeaseInitConnect } from 'actions';
+import { firebeaseInitConnect, firebaseOffConnect } from 'actions';
 
 class FirebaseContainer extends Component {
     componentDidMount() {
         this.props.firebeaseInitConnect();
+    }
+    componentWillUnmount() {
+        this.props.firebaseOffConnect();
     }
     render() {
         return (
@@ -18,12 +21,14 @@ class FirebaseContainer extends Component {
 };
 
 FirebaseContainer.propTypes = {
-    firebeaseInitConnect: PropTypes.func.isRequired
+    firebeaseInitConnect: PropTypes.func.isRequired,
+    firebaseOffConnect  : PropTypes.func.isRequired
 };
 
 export default connect(
     state => ({}),
     dispatch => bindActionCreators({
-        firebeaseInitConnect
+        firebeaseInitConnect,
+        firebaseOffConnect
     }, dispatch)
 )(FirebaseContainer);
