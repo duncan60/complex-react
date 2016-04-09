@@ -1,10 +1,9 @@
 import * as types from 'constants/ActionTypes';
 
-let getFirebaseList = (list) => {
-
+let getFirebaseList = (data) => {
     return {
         type: types.FIREBASE_GET_LIST,
-        list
+        data
     };
 };
 let friebaseError = (error) => {

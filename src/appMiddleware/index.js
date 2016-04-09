@@ -2,7 +2,9 @@ import 'es6-promise';
 import 'isomorphic-fetch';
 import Firebase from 'firebase';
 
-const firebaseRef = new Firebase('https://complex-react.firebaseio.com');
+import { FIREBASE_APP_URL } from 'firebase.config.js';
+
+const firebaseRef = new Firebase(FIREBASE_APP_URL);
 
 export default function appMiddleware () {
     return next => action => {

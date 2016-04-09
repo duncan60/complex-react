@@ -12,6 +12,7 @@ class FirebaseContainer extends Component {
         this.props.firebaseOffConnect();
     }
     render() {
+        console.log('render list', this.props.list);
         return (
            	<div >
 	           	Firebase container
@@ -21,12 +22,15 @@ class FirebaseContainer extends Component {
 };
 
 FirebaseContainer.propTypes = {
+    list                : PropTypes.array.isRequired,
     firebeaseInitConnect: PropTypes.func.isRequired,
     firebaseOffConnect  : PropTypes.func.isRequired
 };
 
 export default connect(
-    state => ({}),
+    state => ({
+        list: state.list
+    }),
     dispatch => bindActionCreators({
         firebeaseInitConnect,
         firebaseOffConnect
