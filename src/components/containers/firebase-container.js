@@ -2,20 +2,36 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import { Table } from 'antd';
+
 import { firebeaseInitConnect, firebaseOffConnect } from 'actions';
 
 class FirebaseContainer extends Component {
     componentDidMount() {
         this.props.firebeaseInitConnect();
+        this.columns = [
+            {
+                title: '編號',
+                dataIndex: 'id',
+                key: 'id'
+            },
+            {
+                title: '姓名',
+                dataIndex: 'name',
+                key: 'id'
+            }
+        ];
     }
     componentWillUnmount() {
         this.props.firebaseOffConnect();
     }
     render() {
-        console.log('render list', this.props.list);
+        const table = this.props.list.length
+            ? <Table columns={this.columns} dataSource={this.props.list} pagination={false} />
+            : null;
         return (
            	<div >
-	           	Firebase container
+	           	{table}
             </div>
         );
     };
