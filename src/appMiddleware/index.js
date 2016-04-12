@@ -23,12 +23,8 @@ export default function appMiddleware () {
                 });
                 break;
             case 'off':
-                console.log('off');
-                firebaseRef.off('value', () => {
-                    next(success());
-                }, (error) => {
-                    next(failure(error.code));
-                });
+                firebaseRef.off('value');
+                next(success());
                 break;
         }
     };

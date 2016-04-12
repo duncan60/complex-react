@@ -11,6 +11,11 @@ const Index = (state = initialState, action) => {
                 ...state,
                 list: action.data.list
             };
+        case types.FIREBASE_OFF:
+            return {
+                ...state,
+                list: []
+            };
         default:
             return state;
     };

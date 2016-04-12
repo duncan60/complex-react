@@ -13,6 +13,9 @@ let friebaseError = (error) => {
     };
 };
 let offFirebase = () => {
+    return {
+        type: types.FIREBASE_OFF
+    };
 };
 
 export function firebeaseInitConnect() {
