@@ -18,7 +18,7 @@ class FirebaseContainer extends Component {
             {
                 title: '姓名',
                 dataIndex: 'name',
-                key: 'id'
+                key: 'name'
             }
         ];
     }
