@@ -1,6 +1,6 @@
 # complex-react
 
-使用 react 實作 iframe jsbin, markdown 解析, firebase串連。
+使用 react 實作測試三項功能：iframe jsbin , markdown 解析, firebase串連。
     
 ![image](https://dl.dropboxusercontent.com/u/64049607/github_img/complex-reac.png)
 
